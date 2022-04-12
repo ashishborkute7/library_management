@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["library-manage-project.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["library-manage-project.herokuapp.com", "localhost"]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://library-manage-project.herokuapp.com'
@@ -92,8 +92,8 @@ DATABASES = {
         'NAME': 'Library',
         'USER': 'root',
         'PASSWORD': 'Wassup@123',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'HOST': 'localhost',
+        'PORT': '',
         'OPTIONS': {
         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
     }
