@@ -24,14 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["library-manage-project.herokuapp.com", "localhost"]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://library-manage-project.herokuapp.com/'
+    'https://library-manage-project.herokuapp.com'
 ]
-
+CORS_ALLOWED_ORIGINS = [
+    'https://library-manage-project.herokuapp.com',
+]
 
 
 # Application definition
@@ -44,9 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Admin',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
