@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["library-manage-project.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["library-manage-project.herokuapp.com", "127.0.0.1"]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://library-manage-project.herokuapp.com'
