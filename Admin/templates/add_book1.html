@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+      {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'all_css/fonts/icomoon/style.css'%}">
+
+    <link rel="stylesheet" href="{% static 'all_css/css/owl.carousel.min.css'%}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'all_css/css/bootstrap.min.css'%}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'all_css/css/style.css'%}">
+
+    <title>add_books</title>
+  </head>
+  <body>
+
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-11 col-xl-2">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="text-white mb-0"></a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active"><a href="/add_book/"><span>Home</span></a></li>
+                <li class="has-children">
+                  <a href="#"><span>Books</span></a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="/all_books/">List of Books</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="/issue_book/"><span>Issue Books</span></a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="/issue_booklist/">List of Issue Books</a></li>
+                  </ul>
+                </li>
+                   <li><a href="/student_list/"><span>Students List</span></a></li>
+                  <li><a href="#"><span>Contact</span></a></li>
+               <li>Welcome Admin: {{request.user}}</li>
+
+              </ul>
+            </nav>
+          </div>
+
+
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+           <div class="container">
+           <form method="POST" > {% csrf_token %}
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Book Name</i></label>
+            <input type="text" class="form-control mt-2" name="name" placeholder="Enter name of the Book" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Author Name</i></label>
+            <input type="text" class="form-control mt-2" name="author" placeholder="Enter name of the Author" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Subject</i></label>
+            <input type="text" class="form-control mt-2" name="subject" placeholder="Enter subject of the book" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Category</i></label>
+            <input type="text" class="form-control mt-2" name="category" placeholder="Enter Category of the book" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary mt-4">Add Book</button>
+
+           </form>
+          </div>
+{% if messages %}
+        {% for message in messages %}
+         {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+        </div>
+        </div>
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+    <div class="hero" style="background-image: url('/static/all_css/images/hero_1.jpg');"></div>
+
+
+
+   <script src="{% static 'add_css/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'add_css/js/popper.min.js' %}"></script>
+    <script src="{% static 'add_css/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'add_css/js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'add_css/js/main.js' %}"></script>
+  </body>
+</html>
