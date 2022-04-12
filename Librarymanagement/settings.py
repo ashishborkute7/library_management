@@ -27,6 +27,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["library-manage-project.herokuapp.com","localhost"]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://library-manage-project.herokuapp.com/'
+]
+
 
 # Application definition
 
