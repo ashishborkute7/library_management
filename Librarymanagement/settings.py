@@ -30,9 +30,12 @@ ALLOWED_HOSTS = ["library-manage-project.herokuapp.com", "localhost"]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://library-manage-project.herokuapp.com'
+<<<<<<< HEAD
 ]
 CORS_ALLOWED_ORIGINS = [
     'https://library-manage-project.herokuapp.com',
+=======
+>>>>>>> 80c309a3a9bde0b1e40f0364c4fb83f8c17b0694
 ]
 
 
